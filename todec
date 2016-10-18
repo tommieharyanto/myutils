@@ -1,2 +1,8 @@
 #!/usr/bin/env bash
-echo "0x$1: $(printf %d "0x$1")";
+if [[ $# -gt 0 ]]; then
+    for arg in "$@"; do
+        echo "0x$arg: $(printf %d "0x$arg")"
+    done
+else
+    echo "Usage: $0 <hex-number> ..."
+fi
