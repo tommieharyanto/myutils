@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 if [[ $# -gt 0 ]]; then
-    echo "$1: 0x$(printf %X $1)";
+    for arg in "$@"; do
+        echo "$arg: 0x$(printf %X $arg)"
+    done
 else
-    echo "Usage: $0 <dec-number>"
+    echo "Usage: $0 <dec-number> ..."
 fi
