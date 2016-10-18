@@ -1,2 +1,6 @@
 #!/usr/bin/env bash
-echo "$1: 0x$(printf %X $1)";
+if [[ $# -gt 0 ]]; then
+    echo "$1: 0x$(printf %X $1)";
+else
+    echo "Usage: $0 <dec-number>"
+fi
